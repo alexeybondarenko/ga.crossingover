@@ -1,0 +1,82 @@
+﻿<! DOCTYPE html >
+<html>
+	<head>
+		<script type='style/css'></script>
+		<link rel="stylesheet" href="main.css">
+	</head>
+<body onload="init()">
+	<div class="section section_settings">
+		<h1>Генетические алгоритмы <span>(автор: Алексей Бондаренко)</span></h1>
+		<div class="col col_33">
+			<h3>Настройки популяции</h3>
+			<form class="form form_population">
+				<label for="">
+					Объем генерируемой популяции (шт)
+					<input type="number" id="maxPopSize" value="100" /> 
+				</label>
+				<label for="">
+					Выживает (%) 
+					<input type="number" id="survivePercent"value="80" min="10" max="100" /> 
+				</label>
+				<label for="">
+					Участвуют в отборе из прошлого	поколения лучшие (%)
+					<input type="number" id="seniorSurvivePercent"value="5" min="0" max="90" />
+				</label>
+			</form>
+		</div>
+		<div class="col col_33">
+			<h3>Настройки популяции</h3>
+			<form class="form form_iterations">
+				<label for="">
+					Число итераций <input type="number" id="itLimit" value="10000" />
+				</label>
+				<label for="">
+				Алгоритм кроcсинговера 
+				<select id="crossover">
+					<option selected="selected" value="0">Одноточечный</option>
+					<option value="1">Многоточечный (2 точки)</option>
+					<option value="2">Многоточечный (3 точки)</option>
+				</select>
+				</label>
+			</form>
+		</div>
+		<div class="col col_33">
+			<h3>Генерация города</h3>
+			<form class="form form_generation">
+				<label>
+					N точек на r1 <input type="number" id="r1PointCount" value="5"></input>
+				</label>
+				<label>
+					N точек на r2 <input type="number" id="r2PointCount" value="8"></input>
+				</label>
+				<label>
+					r1 <input type="number" id="r1" value="80"></input>
+				</label>
+				<label>
+					dr <input type="number" id="dr" value="1.5" step="0.1"></input>
+				</label>
+				<label>
+					&Theta; (&deg;)<input type="number" id="theta" value="0"></input>
+				</label>
+				<button type="button" onclick="generate()">Сгенерировать</button>
+			</form>
+		</div>
+	</div>
+	<div class="section">
+		<div class="form form_result">
+			Длина найденного маршрута: <input id="length" type="text"
+				readonly="readonly"></input>
+		</div>
+		<div class="buttons">
+			<button class="button" type="button" id="clr" size="23" onclick="erase()">Очистить</button> 
+			<button class="button" type="button" id="bl" size="23" onclick="cons()">Решить</button>
+		</div>
+	</div>
+	<div class="section section_canvas">
+		<h3>Результат</h3>
+		<canvas id="can" class="canvas canvas_population" height="400"></canvas>
+	</div>
+	<script type="text/javascript" src="ga.js"></script>
+	<script type="text/javascript" src="canvas.js"></script>
+</body>
+</html>

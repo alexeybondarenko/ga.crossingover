@@ -1,0 +1,59 @@
+
+body {
+	margin: 0;
+	font-family: 'Helvetica Neue';
+	font-size: 14px;
+	line-height: 140%;
+}
+.col {
+	display: inline-block;
+	vertical-align: top;
+	box-sizing: border-box;
+}
+.col.col_50 {
+	width: 49%;
+}
+.col.col_33 {
+	width: 33%;
+}
+
+h1 span {
+	font-weight: 300;
+	font-size: .6em;
+	vertical-align: middle;
+}
+.form {
+
+}
+.form input, .form textarea {
+	width: 100%;
+	padding: 10px;
+}
+.form label {
+	margin-top: 10px;
+	display: block
+}
+.section {
+	position: relative;
+	padding: 20px 40px;
+}
+.section.section_settings {
+	background-color: #f6f6f6;
+}
+.section.section_canvas {
+	border-top: 1px solid #ccc;
+}
+.section.section_canvas h3 {
+	position: absolute
+	top: 20px;
+	left: 20px;
+}
+.canvas {
+	position: absolute;
+	top: 0;
+	right: 0;
+	
+}
+.canvas.canvas_population {
+	
+}
